@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{loggedUser}
+
+  form(name="input", action="/", method="get")
+    input(type="text", name="user")
+    input(type="submit", value="Submit")
+
+  div
+    a(href="?isShow=true") show |
+    a(href="?isShow=false")  hide
+  if isShow == "true"
+    div i am showing myself
